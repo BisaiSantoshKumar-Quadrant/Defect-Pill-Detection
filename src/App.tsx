@@ -21,7 +21,6 @@ import {
   Search,
   Calendar,
   RefreshCw,
-  Filter,
   CheckCircle2,
   XCircle,
 } from "lucide-react";
@@ -434,8 +433,8 @@ export default function App() {
         <nav className="flex-1 px-6 space-y-3 mt-6">
           {[
             { name: "Dashboard", icon: LayoutDashboard },
-            { name: "Analytics", icon: BarChart3 },
-            { name: "Inventory", icon: Package },
+            { name: "Batch History", icon: BarChart3 },
+            // { name: "Inventory", icon: Package },
             { name: "Settings", icon: Settings },
           ].map((item) => {
             const Icon = item.icon;
@@ -451,8 +450,8 @@ export default function App() {
 
       <main className="flex-1 p-8 lg:p-12 overflow-y-auto">
         {activeTab === "Dashboard" && renderDashboard()}
-        {activeTab === "Analytics" && <ProcessData darkMode={darkMode} />}
-        {activeTab !== "Dashboard" && activeTab !== "Analytics" && <div className="flex flex-col items-center justify-center h-[70vh] opacity-20"><Zap size={64} className="mb-4 animate-pulse text-cyan-400" /><h2 className="text-3xl font-black uppercase tracking-widest">{activeTab} Initializing</h2></div>}
+        {activeTab === "Batch History" && <ProcessData darkMode={darkMode} />}
+        {activeTab !== "Dashboard" && activeTab !== "Batch History" && <div className="flex flex-col items-center justify-center h-[70vh] opacity-20"><Zap size={64} className="mb-4 animate-pulse text-cyan-400" /><h2 className="text-3xl font-black uppercase tracking-widest">{activeTab} Loading</h2></div>}
       </main>
 
       {selectedInspection && (
